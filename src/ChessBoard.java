@@ -10,12 +10,12 @@ public class ChessBoard {
 	public void initialize (){
 		for (int i = 0; i < SQUARES_ACROSS; i ++){
 			//initialize white pawns
-			squares[i][1] = new Pawn(color.WHITE);
+			squares[1][i] = new Pawn(color.WHITE);
 		}
 
 		for (int i = 0; i < SQUARES_ACROSS; i++){
 			//initialize black pawns
-			squares[i][SQUARES_DOWN - 2] = new Pawn(color.BLACK);
+			squares[SQUARES_DOWN - 2][i] = new Pawn(color.BLACK);
 		}
 	}
 
@@ -24,7 +24,9 @@ public class ChessBoard {
 	}
 
 	public void displayBoard(){
+		//print 8 rows of the board
 		for (int i = 0; i < SQUARES_DOWN; i++){
+			//the code below prints one row of the board
 			for (int j = 0; j < SQUARES_ACROSS -1 ; j++){
 				System.out.print("#######");
 			}
@@ -36,8 +38,9 @@ public class ChessBoard {
 			System.out.println();
 			for (int j = 0; j < SQUARES_ACROSS; j++){
 				char c = ' ';
-				if (squares[j][i] != null){
-				c = squares[j][i].getDispChar();
+				//if the pointer is not null, it has a piece on it.
+				if (squares[i][j] != null){
+				c = squares[i][j].getDispChar();
 				}
 				System.out.print("#  " + c + "  ");
 			}
@@ -57,15 +60,5 @@ public class ChessBoard {
 		System.out.println();
 	}
 
-	/*public void displayBoard(){
-		for (int i = 0; i < SQUARES_ACROSS; i++){
-			for (int j = 0; j < SQUARES_DOWN; j++){
-				if (squares[j][i] != null) printSquare(squares[j][i].getDispChar());
-				else printSquare(' ');
-			}
-			//System.out.println();
-		}
-	}
-	 */
 
 }
