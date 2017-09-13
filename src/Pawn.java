@@ -6,9 +6,8 @@ public class Pawn extends Piece{
 	}
 
 	@Override 
-	public void display(){
-		System.out.print("p");
+	public char getDispChar(){
+		return 'P';
 	}
-	
 
 }

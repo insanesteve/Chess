@@ -5,8 +5,8 @@ public abstract class Piece {
 		this.pieceColor = pieceColor;
 	}
 	
-	public void display(){
-		
+	public char getDispChar(){
+		return 'X';
 	}
 	
 	
